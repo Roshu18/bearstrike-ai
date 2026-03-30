@@ -16,7 +16,7 @@ We welcome contributions to BearStrike AI! Your help is invaluable in making thi
 
 ## Code of Conduct
 
-BearStrike AI adheres to the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html). By participating, you are expected to uphold this code. Please report unacceptable behavior to [your-email@example.com].
+BearStrike AI adheres to the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html). By participating, you are expected to uphold this code. Please report unacceptable behavior to umeshsingh1k4@gmail.com.
 
 ## How to Contribute
 
