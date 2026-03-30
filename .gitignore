@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Runtime state / local data
+runtime_state.json
+debug.log
+logs/
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/*.sqlite
+
+# Reports and generated artifacts
+reports/output/
+reports/*/
+out/
+*_tmp.py
+cloudflared-linux-amd64
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+tools/bin/windows/xray-suite/

@@ -1,0 +1,158 @@
+version: 4.0
+parallel: 10
+
+http:
+  proxy: ""
+  proxy_rule: []
+  dial_timeout: 5
+  read_timeout: 15
+  max_conns_per_host: 20
+  enable_http2: false
+  fail_retries: 0
+  max_redirect: 5
+  max_resp_body_size: 2097152
+  max_qps: 30
+  allow_methods:
+    - HEAD
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+    - OPTIONS
+  headers:
+    User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36
+
+plugins:
+  baseline:
+    enabled: true
+    detect_cors_header_config: true
+    detect_server_error_page: true
+    detect_system_path_leak: true
+    detect_outdated_ssl_version: true
+    detect_http_header_config: true
+    detect_cookie_httponly: true
+    detect_china_id_card_number: false
+    detect_china_phone_number: false
+    detect_china_bank_card: false
+    detect_private_ip: true
+  brute-force:
+    enabled: true
+    username_dictionary: ""
+    password_dictionary: ""
+  cmd-injection:
+    enabled: true
+  crlf-injection:
+    enabled: true
+  dirscan:
+    enabled: true
+    depth: 1
+    dictionary: ""
+  fastjson:
+    enabled: true
+  jsonp:
+    enabled: true
+  path-traversal:
+    enabled: true
+  phantasm:
+    enabled: true
+    depth: 1
+    auto_load_poc: false
+    exclude_poc: []
+    include_poc: []
+  redirect:
+    enabled: true
+  shiro:
+    enabled: true
+    cookie_name: rememberMe
+    aes_key: []
+  sqldet:
+    enabled: true
+    boolean_based_detection: true
+    error_based_detection: true
+    time_based_detection: true
+    use_comment_in_payload: false
+    detect_sqli_in_cookie: true
+  ssrf:
+    enabled: true
+  struts:
+    enabled: true
+  thinkphp:
+    enabled: true
+    detect_thinkphp_sqli: true
+  upload:
+    enabled: true
+  xss:
+    enabled: true
+    detect_xss_in_cookie: true
+    ie_feature: false
+  xxe:
+    enabled: true
+
+reverse:
+  db_file_path: ""
+  token: ""
+  http:
+    enabled: false
+    listen_ip: 0.0.0.0
+    listen_port: ""
+    ip_header: ""
+  dns:
+    enabled: false
+    listen_ip: 0.0.0.0
+    domain: ""
+    is_domain_name_server: false
+    resolve:
+      - type: A
+        record: localhost
+        value: 127.0.0.1
+        ttl: 60
+  client:
+    remote_server: false
+    http_base_url: ""
+    dns_server_ip: ""
+
+mitm:
+  ca_cert: ./ca.crt
+  ca_key: ./ca.key
+  basic_auth:
+    username: ""
+    password: ""
+  allow_ip_range: []
+  restriction:
+    hostname_allowed: []
+    hostname_disallowed: []
+    port_allowed: []
+    port_disallowed: []
+    path_allowed: []
+    path_disallowed: []
+    query_key_allowed: []
+    query_key_disallowed: []
+    fragment_allowed: []
+    fragment_disallowed: []
+    post_key_allowed: []
+    post_key_disallowed: []
+  queue:
+    max_length: 1000
+  proxy_header:
+    via: ""
+    x_forwarded: false
+  upstream_proxy: ""
+
+basic-crawler:
+  max_depth: 2
+  max_count_of_links: 500
+  allow_visit_parent_path: false
+  restriction:
+    hostname_allowed: []
+    hostname_disallowed: []
+    port_allowed: []
+    port_disallowed: []
+    path_allowed: []
+    path_disallowed: []
+    query_key_allowed: []
+    query_key_disallowed: []
+    fragment_allowed: []
+    fragment_disallowed: []
+    post_key_allowed: []
+    post_key_disallowed: []

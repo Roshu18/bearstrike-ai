@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "bearstrike": {
+      "command": "python3",
+      "args": [
+        "/home/himanshu/xHunt/bearstrike-ai/core/mcp_server.py",
+        "--transport",
+        "stdio"
+      ],
+      "description": "BearStrike AI MCP server (skills-first, tool-driven pentesting)",
+      "timeout": 300,
+      "alwaysAllow": []
+    }
+  }
+}

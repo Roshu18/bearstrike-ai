@@ -1,0 +1,26 @@
+{
+  "ai_provider": "anthropic",
+  "anthropic_api_key": "your-key-here",
+  "claude_model": "claude-sonnet-4-20250514",
+  "openai_api_key": "",
+  "openai_model": "gpt-4o-mini",
+  "openai_base_url": "https://api.openai.com/v1",
+  "dashboard_port": 3000,
+  "mcp_port": 8888,
+  "auto_hunt": true,
+  "default_target": "",
+  "queue_max_concurrency": 2,
+  "heavy_scan_per_target": 1,
+  "research_refresh_interval_hours": 24,
+  "cache_ttl_profile": {
+    "low_noise": 7200,
+    "balanced": 2400,
+    "aggressive": 600
+  },
+  "endpoint_score_thresholds": {
+    "high": 8,
+    "medium": 5
+  },
+  "mcp_direct_wait_seconds": 6,
+  "heavy_scan_cooldown_seconds": 45
+}

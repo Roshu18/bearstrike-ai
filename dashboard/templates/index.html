@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BearStrike AI Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div id="uiTooltip" class="ui-tooltip" aria-hidden="true"></div>
+
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-dot"></span>
+      <strong>BearStrike Community Edition</strong>
+      <span class="build-chip">MCP First</span>
+    </div>
+    <div class="nav-links">
+      <span>Dashboard</span>
+      <span>Run</span>
+      <span>Logs</span>
+      <span>Tools</span>
+      <span>Reports</span>
+    </div>
+    <div class="nav-health">
+      <span class="pulse-dot"></span>
+      <span id="navHealthText">Healthy</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="brand-row">
+      <h1>BearStrike AI</h1>
+      <span id="healthPill" class="pill">HEALTHY</span>
+    </div>
+    <p>Offensive security command center</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel control-panel" data-tip="Set active target and queue a quick tool run.">
+      <h2>Target Control</h2>
+      <div class="target-row">
+        <input id="targetInput" type="text" placeholder="example.com or 10.10.10.10" data-tip="Target domain/IP for recon and scanning tasks.">
+        <button id="setTargetBtn" class="help-tip" data-tip="Stores target in shared runtime state for MCP + dashboard + CLI.">Set Target</button>
+      </div>
+      <p id="targetStatus" class="muted">No target selected</p>
+      <p id="targetFolderHint" class="muted mono">Target folder: --</p>
+
+      <div class="run-row">
+        <select id="quickToolSelect" data-tip="Quick queue for installed tools only. Use Tool Registry for full catalog."></select>
+        <button id="runToolBtn" class="accent-alt help-tip" data-tip="Adds selected tool run to async queue (non-blocking).">Queue Tool</button>
+      </div>
+    </section>
+
+    <section class="panel summary-panel" data-tip="Live runtime health, queue pressure, cache and dedupe efficiency.">
+      <h2>Session Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card" data-tip="Process uptime since dashboard start.">
+          <span>Uptime</span>
+          <strong id="uptimeValue">0s</strong>
+        </div>
+        <div class="summary-card" data-tip="Detected tools available in system PATH.">
+          <span>Installed Tools</span>
+          <strong id="installedValue">0</strong>
+        </div>
+        <div class="summary-card" data-tip="Total registered tools in BearStrike catalog.">
+          <span>Total Tools</span>
+          <strong id="totalToolsValue">0</strong>
+        </div>
+        <div class="summary-card" data-tip="Direct run count tracked by dashboard runtime.">
+          <span>Runs</span>
+          <strong id="runsValue">0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Jobs Queued</span>
+          <strong id="jobsQueuedValue">0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Jobs Running</span>
+          <strong id="jobsRunningValue">0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Cache Entries</span>
+          <strong id="cacheEntriesValue">0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Dedupe Ratio</span>
+          <strong id="dedupeRatioValue">0%</strong>
+        </div>
+        <div class="summary-card">
+          <span>Queue Total</span>
+          <strong id="queueTotalValue">0</strong>
+        </div>
+      </div>
+      <div class="health-bars">
+        <div class="health-item">
+          <span>Queue Pressure</span>
+          <div class="meter-track"><div id="queuePressureBar" class="meter-fill"></div></div>
+        </div>
+        <div class="health-item">
+          <span>Cache Hit Share</span>
+          <div class="meter-track"><div id="cacheHitBar" class="meter-fill ok"></div></div>
+        </div>
+      </div>
+      <p id="platformMeta" class="muted"></p>
+    </section>
+
+    <section class="panel maintenance-panel" data-tip="Clean old runtime rows to keep bearstrike.db small and fast.">
+      <div class="panel-head">
+        <h2>Maintenance</h2>
+        <span class="muted mono" id="storageHint">DB: --</span>
+      </div>
+      <div class="maintenance-grid">
+        <label class="field">
+          <span>Purge Older Than (days)</span>
+          <input id="purgeDaysInput" type="number" min="1" max="3650" value="7" data-tip="Delete scan/job/cache rows older than this many days.">
+        </label>
+        <label class="field checkbox">
+          <input id="purgeIncludeResearch" type="checkbox" data-tip="Also remove old research findings by cutoff window.">
+          <span>Include research_findings</span>
+        </label>
+        <label class="field checkbox">
+          <input id="purgeVacuum" type="checkbox" checked data-tip="Runs SQLite VACUUM to reclaim disk space.">
+          <span>Run SQLite VACUUM</span>
+        </label>
+      </div>
+      <div class="toolbar maintenance-actions">
+        <button id="purgeNowBtn" class="help-tip" data-tip="Safe cleanup using retention days (default 7).">Purge Old Data</button>
+        <button id="clearAllBtn" class="danger help-tip" data-tip="One-click wipe of all runtime DB tables (jobs/cache/endpoints/research/install-state).">Clear All Data</button>
+        <span class="muted mono" id="purgeStatus">No purge yet</span>
+      </div>
+      <pre id="purgeResult" class="maintenance-result muted">Tip: keep 7 days for active testing, then purge to keep DB size stable.</pre>
+    </section>
+
+    <section class="panel planner-panel" data-tip="Build low-noise scan sequence using target context and installed tools.">
+      <div class="panel-head">
+        <h2>Smart Planner</h2>
+        <div class="toolbar">
+          <select id="plannerMode" data-tip="low_noise: safest; balanced: wider; aggressive: deepest and noisier.">
+            <option value="low_noise">low_noise</option>
+            <option value="balanced">balanced</option>
+            <option value="aggressive">aggressive</option>
+          </select>
+          <button id="buildPlanBtn" class="ghost help-tip" data-tip="Generate recommended step sequence for current target.">Build Plan</button>
+          <button id="runPlanBtn" class="help-tip" data-tip="Queue top planned steps as async jobs.">Queue Plan</button>
+        </div>
+      </div>
+      <div id="plannerView" class="planner-view muted">Planner not built yet.</div>
+      <div id="endpointPriority" class="planner-view muted">Endpoint priorities will appear after planning.</div>
+    </section>
+
+    <section class="panel tools-panel" data-tip="Full tool catalog with filter, status, pagination, install and queue actions.">
+      <div class="panel-head">
+        <h2>Tool Registry</h2>
+        <div class="toolbar">
+          <select id="toolStatusFilter" class="inline-select" data-tip="Filter by installed/not_installed status.">
+            <option value="all">all status</option>
+            <option value="installed">installed</option>
+            <option value="not_installed">not installed</option>
+          </select>
+          <select id="toolPageSize" class="inline-select" data-tip="Controls tools listed per page.">
+            <option value="12">12/page</option>
+            <option value="25">25/page</option>
+            <option value="50">50/page</option>
+          </select>
+          <input id="toolSearch" class="search" placeholder="Filter tools..." data-tip="Search by tool name, category, or description.">
+          <button id="refreshToolsBtn" class="ghost help-tip" data-tip="Refresh install status snapshot.">Refresh</button>
+        </div>
+      </div>
+      <div id="categoryFilters" class="filters"></div>
+      <div id="toolsPagination" class="pagination-bar muted"></div>
+      <div id="toolList" class="tool-list"></div>
+    </section>
+
+    <section class="panel jobs-panel" data-tip="Async queue monitor with retry/cancel and output viewer.">
+      <div class="panel-head">
+        <h2>Async Jobs</h2>
+        <div class="toolbar">
+          <select id="jobTargetFilter" class="inline-select" data-tip="Filter jobs by current target or specific target history.">
+            <option value="">all targets</option>
+            <option value="__current__">current target</option>
+          </select>
+          <button id="refreshJobsBtn" class="ghost help-tip" data-tip="Manual refresh of in-memory job list.">Refresh Jobs</button>
+        </div>
+      </div>
+      <div id="jobsList" class="jobs-list"></div>
+      <pre id="jobDetailView" class="job-detail muted">Select "View" on a job to inspect output here.</pre>
+    </section>
+
+    <section class="panel feed-panel" data-tip="Event feed for target changes, queue actions, and scan outcomes.">
+      <div class="panel-head">
+        <h2>Live Feed</h2>
+        <span class="pulse-dot"></span>
+      </div>
+      <div id="liveFeed" class="live-feed"></div>
+    </section>
+  </main>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
