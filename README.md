@@ -15,6 +15,20 @@ Build fast, low-noise security workflows with queue-first execution, skills-awar
 
 </div>
 
+## 🚀 BearStrike AI Highlights
+
+**BearStrike AI** is engineered for **high-signal pentesting** and **bug bounty workflows**, cutting through noise with intelligent AI orchestration. Here’s what makes it stand out:
+
+-   🎯 **Target Control + WAF Context**: Understand your target’s defenses at a glance.
+-   🧠 **Smart Planner Panel**: AI-driven planning prioritizes high-value attack paths.
+-   ⏱️ **Async Jobs + Output Timeline**: Monitor scans in real-time with detailed logs.
+-   🛠️ **Tool List with Category/Status Filtering**: Manage 150+ integrated security tools effortlessly.
+-   🧹 **Maintenance Panel for Retention/Cleanup**: Keep your workspace clean and efficient.
+
+### ✨ Featured On:
+
+[![MCP Market](https://img.shields.io/badge/MCP%20Market-Featured-blueviolet.svg)](https://mcpmarket.com/server/bearstrike-ai)
+
 ---
 
 ## Table of Contents
